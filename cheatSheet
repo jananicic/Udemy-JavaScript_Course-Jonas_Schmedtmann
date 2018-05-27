@@ -1,0 +1,39 @@
+->  Object Literals
+        var person = {
+            firstName: "John",
+            lastName : "Doe",
+            id       : 5566,
+            
+            fullName : function() {
+                return this.firstName + " " + this.lastName;
+            }
+        };
+        let newPerson = person;    
+
+->  Object Constructor
+        function Person(firstName, lastName, age, eyeColor) {
+            this.firstName = firstName;  
+            this.lastName = lastName;
+            this.age = age;
+            this.eyeColor = eyeColor;
+            
+            this.changeName = function (name) {
+                this.lastName = name;
+            };
+        }
+        let person = new Person();
+
+->  Object.defineProperty(obj, prop, descriptor):
+        Object.defineProperty(this, "boja", {
+            get: function() {
+                return boja;
+            },
+            set: function(value) {
+                boja = value;
+            }
+        }); 
+
+->  Error
+        throw new Error("Boja mora imati vise od 3 slova!");
+
+->  
