@@ -113,8 +113,24 @@ else
     document.write(`same`);
 */
 
-// 100 - 1
-for(i=0; i <= 100; i++){
-    if(i !== 100)
-    console.log(100-i);
+let jhon = {
+    bill: [124, 48, 268, 180, 42],
+    tip: [],
+    payment: [],
+    calc: function() {
+        for(i = 0; i < this.bill.length; i++){
+            if (this.bill[i] < 50){
+                this.tip.push(this.bill[i] * 0.5);
+                this.payment.push(this.tip[i] + this.bill[i]);
+            } 
+            else if (this.bill[i] >= 50 && this.bill[i] <= 200) {
+                this.tip.push(this.bill[i] * 0.15);
+                this.payment.push(this.tip[i] + this.bill[i]);
+            } 
+            else {
+                this.tip.push(this.bill[i] * 0.1);
+                this.payment.push(this.tip[i] + this.bill[i]);
+            }
+        }
+    }
 }
