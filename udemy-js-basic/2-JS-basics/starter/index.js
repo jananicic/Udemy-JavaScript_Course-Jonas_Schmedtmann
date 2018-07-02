@@ -113,8 +113,4 @@ else
     document.write(`same`);
 */
 
-// 100 - 1
-for(i=0; i <= 100; i++){
-    if(i !== 100)
-    console.log(100-i);
-}
+test msg from mac
