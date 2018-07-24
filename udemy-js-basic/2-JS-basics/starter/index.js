@@ -112,5 +112,3 @@ else if (mark.BMI > jhon.BMI)
 else
     document.write(`same`);
 */
-
-test msg from mac
