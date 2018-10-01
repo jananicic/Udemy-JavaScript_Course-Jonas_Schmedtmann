@@ -113,7 +113,7 @@ else
     document.write(`same`);
 */
 
-let jhon = {
+/*let jhon = {
     bill: [124, 48, 268, 180, 42],
     tip: [],
     payment: [],
@@ -133,4 +133,4 @@ let jhon = {
             }
         }
     }
-}
+}*/
