@@ -63,7 +63,7 @@ document.querySelector('.btn-hold').addEventListener('click', function() {
         // Update the UI
         document.querySelector('#score-' + activePlayer).textContent = scores[activePlayer];
         
-        var input = document.querySelector('.final-score').value;
+        var input = document.querySelector('.9-forkify-final-score').value;
         var winningScore;
         
         // Undefined, 0, null or "" are COERCED to false
