@@ -58,9 +58,13 @@ const contorlRecipe = async () => {
 
         try {
         await state.recipe.getRecipe();
+        state.recipe.parseIngredients();
 
         state.recipe.calcTime();
         state.recipe.calcServings();
+
+        console.log(state.search.recipes);
+        console.log(state.recipe);
         } catch (e) {
             alert('wrong recipe');
         }
