@@ -2,6 +2,7 @@ import Search from './models/Search';
 import Recipe from './models/Recipe';
 import { elements, renderLoader, clearLoader } from './views/base';
 import * as searchViews from './views/searchViews';
+import * as recipeViews from './views/recipeViews';
 
 const state = {};
 
@@ -22,10 +23,10 @@ const controlSearch = async () => {
         try {
         await state.search.getRecipes();
         clearLoader();
-
         searchViews.renderResults(state.search.recipes);
         } catch (e) {
             alert('something is wrong with search');
+            console.log(e);
             clearLoader();
         }
     }
@@ -56,15 +57,20 @@ const contorlRecipe = async () => {
     if(id) {
         state.recipe = new Recipe(id);
 
+        recipeViews.clearRecipe();
+        renderLoader(elements.recipe);
+        if(state.search)
+            searchViews.highlightSelected(id);
+
         try {
-        await state.recipe.getRecipe();
-        state.recipe.parseIngredients();
+            await state.recipe.getRecipe();
+            state.recipe.parseIngredients();
 
-        state.recipe.calcTime();
-        state.recipe.calcServings();
+            state.recipe.calcTime();
+            state.recipe.calcServings();
 
-        console.log(state.search.recipes);
-        console.log(state.recipe);
+            clearLoader();
+            recipeViews.renderRecipe(state.recipe);
         } catch (e) {
             alert('wrong recipe');
         }

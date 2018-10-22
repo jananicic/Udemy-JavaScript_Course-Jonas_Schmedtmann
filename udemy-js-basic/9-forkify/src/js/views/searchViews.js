@@ -25,6 +25,16 @@ const limitRecipeTitle = (title, limit = 17) => {
     return title;
 };
 
+export const highlightSelected = id => {
+    const resultsArr = document.querySelectorAll('.results__link');
+
+    resultsArr.forEach(el => {
+        el.classList.remove('results__link--active');
+    });
+
+    document.querySelectorAll(`a[href="#${id}"]`).classList.add('results__link--active');
+};
+
 const renderRecipe = recipe => {
     const markup = `
                 <li>
