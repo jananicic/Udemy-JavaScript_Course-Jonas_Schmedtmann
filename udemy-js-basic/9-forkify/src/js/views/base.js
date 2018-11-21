@@ -23,3 +23,8 @@ export const clearLoader = () => {
     if(loader)
         loader.parentElement.removeChild(loader);
 };
+
+
+
+
+// TODO: nauci Matiju pisati todo-ove.
